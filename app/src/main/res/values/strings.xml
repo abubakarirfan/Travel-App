@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">WeatherApp</string>
+    <string name="city">Melbourne</string>
+    <string name="temp">18°C</string>
+    <string name="description">Thunderstorm</string>
+    <string name="humidity">18%</string>
+    <string name="humidityDescription">Humidity</string>
+    <string name="windDescription">Wind</string>
+    <string name="wind">19km/h</string>
+    <string name="precipitationDescription">Precipitation</string>
+    <string name="precipitation">20%</string>
+    <string name="visibilityDescription">Visibility</string>
+    <string name="visibility">5km/h</string>
 </resources>
