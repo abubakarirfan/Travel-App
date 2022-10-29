@@ -5,18 +5,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:padding="20sp"
-    android:background="@drawable/___3"
+    android:background="@drawable/background"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-
-    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-        android:id="@+id/swipe"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -26,15 +17,40 @@
             <TextView
                 android:id="@+id/city"
                 android:layout_width="match_parent"
-                android:padding="10sp"
+                android:paddingTop="10sp"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:textAlignment="center"
                 android:textColor="@color/white"
                 android:layout_gravity="center"
-                android:textSize="20sp"
+                android:textSize="30sp"
                 android:textStyle="bold"
                 android:text="@string/city"/>
+
+            <TextView
+                android:id="@+id/lastUpdated"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="2sp"
+                android:textAlignment="center"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:text="@string/updated" />
+
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:paddingTop="20sp"
+                android:fontFamily="sans-serif"
+                android:textStyle="italic"
+                android:text="@string/description" />
 
             <TextView
                 android:id="@+id/currentTemp"
@@ -44,100 +60,140 @@
                 android:textAlignment="center"
                 android:layout_gravity="center"
                 android:gravity="center"
+                android:fontFamily="sans-serif-thin"
                 android:textColor="@color/white"
-                android:textSize="40sp"
+                android:textSize="60sp"
                 android:textStyle="bold"
                 android:text="@string/temp" />
 
-            <TextView
-                android:id="@+id/description"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:textColor="@color/white"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:text="@string/description" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="30sp"
-                android:orientation="horizontal">
+                android:padding="10sp"
+                android:background="@drawable/background_float"
+                android:orientation="horizontal"
+                android:baselineAligned="false">
 
-                <LinearLayout
+                <ImageView
+                    android:id="@+id/humidityDescription"
                     android:layout_width="match_parent"
+                    android:layout_height="25sp"
                     android:layout_weight="1"
-                    android:layout_height="match_parent">
-                    <TextView
-                        android:id="@+id/humidityDescription"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/white"
-                        android:layout_weight="1"
-                        android:text="@string/humidityDescription" />
+                    android:src="@drawable/humidity"
+                    android:contentDescription="" />
 
-                    <TextView
-                        android:id="@+id/humidity"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:textAlignment="center"
-                        android:textColor="@color/white"
-                        android:text="@string/humidity" />
-
-                </LinearLayout>
-
-                <LinearLayout
+                <TextView
+                    android:id="@+id/humidity"
                     android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:layout_height="match_parent">
-                    <TextView
-                        android:id="@+id/windDescription"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:textColor="@color/white"
-                        android:text="@string/windDescription" />
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:text="@string/humidity" />
 
-                    <TextView
-                        android:id="@+id/wind"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/white"
-                        android:textAlignment="center"
-                        android:layout_weight="1"
-                        android:text="@string/wind" />
-                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/windDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="25sp"
+                    android:layout_weight="1"
+                    android:src="@drawable/wind"
+                    android:contentDescription="" />
+
+                <TextView
+                    android:id="@+id/wind"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textAlignment="center"
+                    android:layout_weight="1"
+                    android:text="@string/wind" />
+
+
+                <ImageView
+                    android:id="@+id/sunriseDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="25sp"
+                    android:layout_weight="1"
+                    android:src="@drawable/sunrise"
+                    android:contentDescription="" />
+
+                <TextView
+                    android:id="@+id/sunrise"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:text="@string/precipitation" />
+
+                <ImageView
+                    android:id="@+id/sunsetDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="25sp"
+                    android:layout_weight="1"
+                    android:src="@drawable/sunset"
+                    android:contentDescription="" />
+
+                <TextView
+                    android:id="@+id/sunset"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:text="@string/visibility" />
 
             </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10sp"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="10sp"
-                android:orientation="horizontal">
+                android:background="@drawable/background_float"
+                android:paddingBottom="10sp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/clothing"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textAlignment="center"
+                    android:layout_weight="1"
+                    android:textSize="20sp"
+                    android:paddingBottom="10sp"
+                    android:textStyle="bold"
+                    android:text="@string/clothing" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_weight="1"
+                    android:paddingBottom="5sp"
                     android:layout_height="match_parent">
-                    <TextView
-                        android:id="@+id/precipitationDescription"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/white"
-                        android:layout_weight="1"
-                        android:text="@string/precipitationDescription" />
 
                     <TextView
-                        android:id="@+id/precipitation"
+                        android:id="@+id/topDescription"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:layout_weight="1"
+                        android:textAlignment="center"
+                        android:text="@string/top" />
+
+                    <ImageView
+                        android:id="@+id/top"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:textAlignment="center"
-                        android:textColor="@color/white"
-                        android:text="@string/precipitation" />
+                        android:src="@drawable/jacket"
+                        android:contentDescription="@string/topDescription" />
 
                 </LinearLayout>
 
@@ -146,43 +202,68 @@
                     android:layout_weight="1"
                     android:layout_height="match_parent">
                     <TextView
-                        android:id="@+id/visibilityDescription"
+                        android:id="@+id/bottomDescription"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:textColor="@color/white"
-                        android:text="@string/visibilityDescription" />
-
-                    <TextView
-                        android:id="@+id/visibility"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/white"
-                        android:layout_weight="1"
+                        android:textColor="@color/black"
                         android:textAlignment="center"
-                        android:text="@string/visibility" />
+                        android:text="@string/bottomDescription" />
+
+                    <ImageView
+                        android:id="@+id/bottom"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:src="@drawable/shorts"
+                        android:contentDescription="@string/bottom" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:id="@+id/accessoriesDescription"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textColor="@color/black"
+                        android:textAlignment="center"
+                        android:text="Accessories" />
+
+                    <ImageView
+                        android:id="@+id/accessories"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:src="@drawable/scarf"
+                        android:contentDescription="@string/bottom" />
                 </LinearLayout>
 
             </LinearLayout>
 
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10sp"/>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/floatingActionButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:clickable="true"
+                android:contentDescription="@string/add_cities"
+                app:srcCompat="@android:drawable/ic_input_add" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"
                 android:paddingTop="20sp"
                 android:id="@+id/dailyRecycler"
+                android:background="@drawable/background_float"
                 android:layout_height="wrap_content" />
-
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/floatingActionButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:clickable="true"
-                app:srcCompat="@android:drawable/ic_menu_add" />
-
 
         </LinearLayout>
 
-    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
-
-  </LinearLayout>
+</LinearLayout>

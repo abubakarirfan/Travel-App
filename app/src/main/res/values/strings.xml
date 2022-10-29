@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">WeatherApp</string>
+    <string name="app_name">Travel App</string>
     <string name="city">Melbourne</string>
     <string name="temp">18°C</string>
     <string name="description">Thunderstorm</string>
@@ -11,4 +11,14 @@
     <string name="precipitation">20%</string>
     <string name="visibilityDescription">Visibility</string>
     <string name="visibility">5km/h</string>
+    <string name="clothing">Clothing</string>
+    <string name="top">Top</string>
+    <string name="topDescription">T-Shirt</string>
+    <string name="bottomDescription">Bottom</string>
+    <string name="bottom">Pant</string>
+    <string name="add_cities">Add Cities</string>
+    <string name="updated">Last Updated at</string>
+    <string name="toggleunit">ToggleUnit</string>
+    <string name="showdailyforecast">ShowDailyForecast</string>
+    <string name="changelocation">ChangeLocation</string>
 </resources>
