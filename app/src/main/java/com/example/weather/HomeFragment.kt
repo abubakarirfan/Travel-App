@@ -1,34 +1,40 @@
 package com.example.weather
 
-import android.annotation.SuppressLint
 import android.content.Intent
+import android.media.Image
+import android.os.Build
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.findNavController
-import androidx.navigation.ui.setupWithNavController
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
+import androidx.navigation.ui.NavigationUI.setupWithNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.weather.adapter.TemperatureAdapter
+import com.example.weather.databinding.ActivityMainBinding
 import com.example.weather.networking.WeatherService
 import com.example.weather.repo.WeatherRepository
 import com.example.weather.viewModels.WeatherViewModel
 import com.example.weather.viewModels.WeatherViewModelFactory
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.android.material.textfield.TextInputEditText
 import java.text.SimpleDateFormat
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
 
-class MainActivity : AppCompatActivity() {
+const val API_KEY = "48d4f30e973148aab8a112547220111"
+
+
+class HomeFragment : AppCompatActivity() {
 
     private var cityName : String = "Sydney"
     private lateinit var adapter: TemperatureAdapter
@@ -37,11 +43,9 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_home)
 
-
-
-        val dailyRecycler = findViewById<RecyclerView>(R.id.dailyRecycler)
+        /*val dailyRecycler = findViewById<RecyclerView>(R.id.dailyRecycler)
         adapter = TemperatureAdapter()
         val layoutManager = LinearLayoutManager(this)
         dailyRecycler.layoutManager = layoutManager
@@ -49,8 +53,9 @@ class MainActivity : AppCompatActivity() {
 
         val weatherInstance = WeatherService.getInstance()
         val repository = WeatherRepository(weatherInstance)
-        val viewModel = ViewModelProvider(this, WeatherViewModelFactory(repository))
-            .get(WeatherViewModel::class.java)
+        val viewModel = ViewModelProvider(this, WeatherViewModelFactory(repository)).get(WeatherViewModel::class.java)
+
+
 
 
         viewModel.getCurrTemp(API_KEY,cityName,10)
@@ -118,19 +123,20 @@ class MainActivity : AppCompatActivity() {
                 putExtra("CITY", city.text)
             }
             startActivity(intent)
-        }
+        }*/
 
     }
 
-    @SuppressLint("NewApi")
-    fun getDay(date: String) : String {
-        val inFormat = SimpleDateFormat("yyyy-MM-dd")
-        val newDate = inFormat.parse(date)
-        val outFormat = SimpleDateFormat("EEEE")
-        if(date == LocalDate.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"))){
-            return "Today"
-        }
-        return outFormat.format(newDate)
-    }
+//    fun getDay(date: String) : String {
+//        val inFormat = SimpleDateFormat("yyyy-MM-dd")
+//        val newDate = inFormat.parse(date)
+//        val outFormat = SimpleDateFormat("EEEE")
+//        if(date == LocalDate.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"))){
+//            return "Today"
+//        }
+//        return outFormat.format(newDate)
+//    }
 
 }
+
+class Join(val temp : Double , val date : String, val icon: String)

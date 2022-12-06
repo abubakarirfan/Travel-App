@@ -21,4 +21,7 @@
     <string name="toggleunit">ToggleUnit</string>
     <string name="showdailyforecast">ShowDailyForecast</string>
     <string name="changelocation">ChangeLocation</string>
+    <string name="addingcities">Search Cities</string>
+    <string name="add_button">Add</string>
+    <string name="day">Monday</string>
 </resources>

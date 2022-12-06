@@ -12,4 +12,5 @@ class WeatherViewModelFactory(val weatherRepository: WeatherRepository) : ViewMo
             throw IllegalArgumentException("ViewModel cannot be found")
         }
     }
+
 }

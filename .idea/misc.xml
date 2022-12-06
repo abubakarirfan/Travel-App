@@ -3,6 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Uni/Year 2/Semester 2 2022/Software Development for Mobile Devices (SDMD)/Programs/WeatherApp/app/src/main/res/drawable-v24/background_2.xml" value="0.1" />
+        <entry key="..\:/Uni/Year 2/Semester 2 2022/Software Development for Mobile Devices (SDMD)/Programs/WeatherApp/app/src/main/res/drawable/background.xml" value="0.143" />
+        <entry key="..\:/Uni/Year 2/Semester 2 2022/Software Development for Mobile Devices (SDMD)/Programs/WeatherApp/app/src/main/res/drawable/background_float.xml" value="0.1" />
+        <entry key="..\:/Uni/Year 2/Semester 2 2022/Software Development for Mobile Devices (SDMD)/Programs/WeatherApp/app/src/main/res/drawable/recycler_background.xml" value="0.1565" />
+        <entry key="..\:/Uni/Year 2/Semester 2 2022/Software Development for Mobile Devices (SDMD)/Programs/WeatherApp/app/src/main/res/layout/activity_favorite.xml" value="0.1" />
+        <entry key="..\:/Uni/Year 2/Semester 2 2022/Software Development for Mobile Devices (SDMD)/Programs/WeatherApp/app/src/main/res/layout/activity_forecast.xml" value="0.1" />
+        <entry key="..\:/Uni/Year 2/Semester 2 2022/Software Development for Mobile Devices (SDMD)/Programs/WeatherApp/app/src/main/res/layout/activity_home.xml" value="0.1" />
+        <entry key="..\:/Uni/Year 2/Semester 2 2022/Software Development for Mobile Devices (SDMD)/Programs/WeatherApp/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Uni/Year 2/Semester 2 2022/Software Development for Mobile Devices (SDMD)/Programs/WeatherApp/app/src/main/res/layout/activity_newcity.xml" value="0.264" />
+        <entry key="..\:/Uni/Year 2/Semester 2 2022/Software Development for Mobile Devices (SDMD)/Programs/WeatherApp/app/src/main/res/layout/fragment_item.xml" value="0.25" />
+        <entry key="..\:/Uni/Year 2/Semester 2 2022/Software Development for Mobile Devices (SDMD)/Programs/WeatherApp/app/src/main/res/menu/bottom_nav_menu.xml" value="0.1" />
         <entry key="..\:/Weather-App-using-Retrofit-Kotlin-Android/app/src/main/res/drawable/background.xml" value="0.1" />
         <entry key="..\:/Weather-App-using-Retrofit-Kotlin-Android/app/src/main/res/drawable/background_float.xml" value="0.145" />
         <entry key="..\:/Weather-App-using-Retrofit-Kotlin-Android/app/src/main/res/layout/activity_city.xml" value="0.2" />
